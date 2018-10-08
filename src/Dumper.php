@@ -1,10 +1,9 @@
 <?php
 
-namespace BeyondCode\DumpServer;
+namespace ClintonElectronics\DumpServer;
 
 use Symfony\Component\VarDumper\Cloner\VarCloner;
 use Symfony\Component\VarDumper\Dumper\CliDumper;
-use Symfony\Component\VarDumper\Dumper\HtmlDumper;
 use Symfony\Component\VarDumper\Server\Connection;
 
 class Dumper
@@ -39,7 +38,7 @@ class Dumper
             $data = (new VarCloner)->cloneVar($value);
 
             if ($this->connection === null || $this->connection->write($data) === false) {
-                $dumper = in_array(PHP_SAPI, ['cli', 'phpdbg']) ? new CliDumper : new HtmlDumper;
+                $dumper = new CliDumper;
                 $dumper->dump($data);
             }
         } else {
