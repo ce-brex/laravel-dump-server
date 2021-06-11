@@ -1,13 +1,19 @@
 {
-    "name": "beyondcode/laravel-dump-server",
-    "description": "Symfony Var-Dump Server for Laravel",
+    "name": "ce-brex/laravel-zero-dump-server",
+    "description": "Symfony Var-Dump Server for Laravel Zero",
     "keywords": [
         "beyondcode",
         "laravel-dump-server"
     ],
-    "homepage": "https://github.com/beyondcode/laravel-dump-server",
+    "homepage": "https://github.com/ce-brex/laravel-dump-server-zero",
     "license": "MIT",
     "authors": [
+        {
+            "name": "Bill Rex",
+            "email": "brex@clintonelectronics.com",
+            "homepage": "https://www.clintonelectronics.com",
+            "role": "Developer"
+        },
         {
             "name": "Marcel Pociot",
             "email": "marcel@beyondco.de",
@@ -16,10 +22,9 @@
         }
     ],
     "require": {
-        "php": ">=7.2.5",
-        "illuminate/console": "5.6.*|5.7.*|5.8.*|^6.0|^7.0|^8.0",
-        "illuminate/http": "5.6.*|5.7.*|5.8.*|^6.0|^7.0|^8.0",
-        "illuminate/support": "5.6.*|5.7.*|5.8.*|^6.0|^7.0|^8.0",
+        "php": "^7.3|^8.0",
+        "illuminate/log": "^8.0",
+        "laravel-zero/framework": "^8.8",
         "symfony/var-dumper": "^5.0"
     },
     "require-dev": {
@@ -28,7 +33,7 @@
     },
     "autoload": {
         "psr-4": {
-            "BeyondCode\\DumpServer\\": "src"
+            "ClintonElectronics\\DumpServer\\": "src"
         },
         "files": [
             "helpers.php"
@@ -36,7 +41,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "BeyondCode\\DumpServer\\Tests\\": "tests"
+            "ClintonElectronics\\DumpServer\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -49,7 +54,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "BeyondCode\\DumpServer\\DumpServerServiceProvider"
+                "ClintonElectronics\\DumpServer\\DumpServerServiceProvider"
             ]
         }
     }
